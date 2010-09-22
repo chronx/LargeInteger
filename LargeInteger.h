@@ -11,7 +11,6 @@ private:
 	std::string stripZeros(std::string number);
 	std::list<int> stripZeros(std::list<int> number);
 
-	//std::list<int> sublist(std::list<int> number, int i, int j);
 
 public:
 	//Ctors
@@ -27,8 +26,6 @@ public:
 	LargeInteger multiply(LargeInteger number);
 	LargeInteger multiply(std::list<int> number);
 
-	//LargeInteger dacmultiply(LargeInteger number);
-	//LargeInteger dacmultiply(std::list<int> number);
 
 	LargeInteger subtract(std::list<int> number);
 	LargeInteger subtract(LargeInteger number);
@@ -54,7 +51,7 @@ public:
 	void value(std::list<int> number);
 	void value(LargeInteger integer);
 	void negative(bool negative) { negativeFlag = negative; }
-	std::list<int> value();				// I don't like this but oh well
+	std::list<int> value();
 };
 
 
@@ -62,29 +59,3 @@ public:
 #endif/*LARGEINTEGER_H*/
 
 
-/*
-
-DaCMultiply( A[0..n-1], B[0..n-1]) {
-	int n = sizeof(A); 	// sizeof(A) == sizeof(B) 
-	if( n == 1) {		//sentinel size
-		return (A[0] * B[0]) 
-	} else {
-		a_l <- A[0..floor(n/2)]
-		a_r <- A[ceil(n/2)..n]
-		b_l <- B[0..floor(n/2)]
-		b_r <- B[ceil(n/2)..n]
-		
-		product1 <- DacMultiply( a_l, b_l )
-		product2 <- DacMultiply( a_r, b_r )
-
-		product3 <- DacMultiply( a_l, b_r )
-		product4 <- DacMultiply( a_r, b_l )
-
-		return (product1*10^(n/2) + (product3 + product4)*10^(n/2) + product2);
-
-		//product3 <- DacMultiply( a_l + b_l, a_r + b_r)
-		//return product1*10^n + (product3-product1-product2)*10^(n/2) + product2
-		
-	}
-}
-*/
